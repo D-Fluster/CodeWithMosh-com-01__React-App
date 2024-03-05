@@ -1,0 +1,46 @@
+<!--  If local host drops, open terminal and type
+      "npm run dev" 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>Vite + React + TS</title> -->
+    <title>Danimo&rsquo;s Sandbox</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+
+
+<!-- Ticket 4-b:
+  Per Matthew Robis in Explorer Q&A with Suzanne:
+    I think the link in the ticket is wrong
+    It points to  https://youtu.be/0Qy8QWNQr5k?si=7paonX7ehYirQKJV and the correct link is 
+    https://www.youtube.com/watch?v=H9aOPPb_3ZA&list=PLuePfAWKCLvXDmUCkglj2na2f4TCvCfLg&index=204  
+    This is the link to the dog tricks video
+-->
+
+<!-- Ticket 3: What is the DOM?
+  There *are* better ways to capture all instances of a class
+  Also important to note that "class" and "ID" are used for CSS styling,
+    where "class" can be used multiple times and "ID" should be unique
+  However, there's also things like "data" ("data ID"?) that can be used
+    to manipulate the data (i.e., dynamically force data updates) --
+    this is currently the preferred method
+  When you have full control of the layout, you can structure it how you need,
+    so using "ID" (which is typically used for CSS styling) is technically fine
+  When looking for "class," the first will be returned with ".querySelector,"
+    but there are other options in the MDN docs (perhaps ".querySelectorAll"),
+    which could potentially be stored in an array and looped over to change all instances
+  Conversely, looking for "ID" should only return one item (i.e., how I did it)
+  Check out MDN web docs and other visual cheat sheets
+  https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+  https://developer.mozilla.org/en-US/docs/Web/API/Document
+-->

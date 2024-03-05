@@ -1,0 +1,183 @@
+import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
+import ButtonDKF from "./components/ButtonDKF";
+import ButtonCWM from "./components/ButtonCWM";
+import AlertDismissDKF from "./components/AlertDismissDKF";
+import AlertDismissCWM from "./components/AlertDismissCWM";
+import { useState } from "react";
+
+let items = [
+  "Denmark",
+  "Athens",
+  "New Mexico",
+  "Ibiza",
+  "Mississippi",
+  "Orlando",
+];
+
+const handleSelectItem = (item: string) => {
+  console.log(item);
+};
+
+function App() {
+  const [alertVisible, setAlertVisibility] = useState(false);
+
+  return (
+    <>
+      <div>
+        {alertVisible && (
+          <AlertDismissCWM onClose={() => setAlertVisibility(false)}>
+            Mosh's Dismissable Alert
+          </AlertDismissCWM>
+        )}
+        <ButtonCWM color="secondary" onClick={() => setAlertVisibility(true)}>
+          Mosh's Dynamic Button
+        </ButtonCWM>
+      </div>
+      <br />
+      <br />
+      <div>
+        <AlertDismissDKF>
+          I'm a dismissable alert &ndash; we hope!
+          <br />
+          Eye yam, but I'm not dynamic...
+        </AlertDismissDKF>
+      </div>
+      <br />
+      <div>
+        <ButtonDKF text="Success!" />
+      </div>
+      <br />
+      <br />
+      <div>
+        <Alert>
+          <h1>
+            Hello World
+            <em>
+              <strong>!</strong>
+            </em>
+          </h1>
+        </Alert>
+      </div>
+      <br />
+      <div>
+        <ListGroup
+          items={items}
+          heading="Places"
+          onSelectItem={handleSelectItem}
+        />
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+
+/* Simple test with Message.tsx:
+// First we import our Message function from the
+// // Message.tsx file, which is in the current folder --
+// // thus we call it with the "./"
+// import Message from "./Message";
+*/
+
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+
+/* ListGroup.tsx component, finalized:
+import ListGroup from "./components/ListGroup";
+
+function App() {
+  // After importing, we can now use the "Message" React component
+  // // just like regular HTML elements -- and, like regular HTML, it's not
+  // // important to *close* the React components, otherwise compilation error
+  // There's also a more concise "self-closing" syntax wherein
+  // // <Message></Message> === <Message />
+  // // return <div><Message></Message></div>;
+  
+  // It's possible to call the same component multiple times -- e.g.,
+  // // <ListGroup /><ListGroup /> -- and it's important to note that
+  // // each will have their own independent "states" (e.g., each list
+  // // will have its own "selectedIndex" so different list items will
+  // // be highlighted within each list
+
+  let items = [
+    "Denmark",
+    "Athens",
+    "New Mexico",
+    "Ibiza",
+    "Mississippi",
+    "Orlando",
+  ];
+
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+
+  return (
+    <div>
+      <ListGroup
+        items={items}
+        heading="Places"
+        onSelectItem={handleSelectItem}
+      />
+    </div>
+  );
+}
+
+// Just as we did with the Message component, we export the App component
+// // so it can be used somewhere else
+export default App;
+
+// Now the terminal shows: [vite] hmr update /src/App.tsx (x6)
+// // where HMR = "Hot Module Replacement"
+// Under the hood, Vite monitors our files for changes and
+// // automatically pushes them to / refreshes the browser
+
+*/
+
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+// // // // // // // // // // // // // // // // // // // // // // // // //
+
+/* ORIGINAL CONTENTS:
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="App">
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </div>
+  )
+}
+
+export default App
+*/
