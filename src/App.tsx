@@ -1,3 +1,15 @@
+/* INITIALIZATION STEPS:
+
+// In Command Prompt:
+npm create vite@(latest, or other version; Mosh @ 4.1.0)
+// Choose React, then choose TypeScript (with arrow & enter keys)
+npm install
+
+// In IDE/VSCode:
+npm i (or install) bootstrap@(latest, or other version; Mosh @ 5.2.3)
+npm run dev
+*/
+
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import ButtonDKF from "./components/ButtonDKF";
